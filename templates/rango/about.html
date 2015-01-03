@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% load staticfiles %}
+
+{% block title %}About{% endblock %}
+
+{% block body_block %}
+    <div class="page-header">
+        <h1>Rango is a wonderful Django app...</h1>
+    </div>
+
+    <img src="{% static "images/rango.jpg" %}" alt="Picture of Rango"/>
+{% endblock %}
