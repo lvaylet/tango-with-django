@@ -1,8 +1,10 @@
 import json
 import urllib.request, urllib.parse, urllib.error, urllib.request, urllib.error, urllib.parse
 
-# Add your BING_API_KEY to a file called keys, which is NOT commited to the repo.
-from keys import BING_API_KEY
+# Add your BING_API_KEY to a file called keys, which is NOT committed to the repo.
+# Replace .keys with keys with Python3 to be able to run main(), as mentioned here:
+# http://stackoverflow.com/questions/16637428/relative-import-in-python-3-not-working
+from .keys import BING_API_KEY
 
 
 def run_query(search_terms):
