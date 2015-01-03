@@ -49,3 +49,6 @@ docs/_build/
 
 # Jetbrains PyCharm
 .idea/
+
+# API keys
+rango/keys.py
