@@ -1,6 +1,7 @@
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
+*.sqlite3
 
 # OSX Finder turds
 .DS_Store
@@ -44,15 +45,8 @@ coverage.xml
 # Sphinx documentation
 docs/_build/
 
-# SQLite
-db.sqlite3
-
 # Jetbrains PyCharm
 .idea/
 
 # API keys
 rango/keys.py
-
-db.sqlite3
-
-db.sqlite3
