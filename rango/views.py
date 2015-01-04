@@ -304,3 +304,20 @@ def track_url(request):
                 pass
 
     return redirect(url)
+
+
+@login_required
+def like_category(request):
+    cat_id = None
+    if request.method == 'GET':
+        cat_id = request.GET['cat_id']
+
+    likes = 0
+    if cat_id:
+        cat = Category.objects.get(id=int(cat_id))
+        if cat:
+            likes = cat.likes + 1
+            cat.likes = likes
+            cat.save()
+
+    return HttpResponse(likes)
