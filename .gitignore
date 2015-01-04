@@ -52,3 +52,5 @@ db.sqlite3
 
 # API keys
 rango/keys.py
+
+db.sqlite3
