@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+{% load staticfiles %}
 {% load rango_extras %}
 <html lang="en">
 <head>
@@ -74,5 +75,9 @@
 <script src="http://getbootstrap.com/dist/js/bootstrap.min.js"></script>
 <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
 <script src="http://getbootstrap.com/assets/js/ie10-viewport-bug-workaround.js"></script>
+
+<!-- JavaScript
+================================================== -->
+<script src="{% static "js/rango-jquery.js" %}"></script>
 </body>
 </html>
