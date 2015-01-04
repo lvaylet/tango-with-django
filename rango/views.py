@@ -2,7 +2,7 @@ from datetime import datetime
 
 from django.contrib.auth import authenticate, login, logout
 from django.http import HttpResponseRedirect, HttpResponse
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
 
 from rango.models import Category, Page
@@ -267,3 +267,24 @@ def search(request):
             result_list = run_query(query)
 
     return render(request, 'rango/search.html', {'result_list': result_list})
+
+
+def track_url(request):
+    # Redirect to page URL if a page matching page_id is found.
+    # Redirect to homepage if:
+    #  - The parameters did not return a Page object: redirect to homepage.
+    #  - No parameters in the HTTP GET request for page_id: redirect to homepage.
+    #  - Method is not GET
+    url = 'index'
+    if request.method == 'GET':
+        if 'page_id' in request.GET:
+            page_id = request.GET['page_id']
+            try:
+                page = Page.objects.get(pk=page_id)
+                page.views += 1
+                page.save()
+                url = page.url
+            except Page.DoesNotExist:
+                pass
+
+    return redirect(url)

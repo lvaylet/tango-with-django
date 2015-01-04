@@ -12,11 +12,11 @@
         {% if pages %}
             <ul>
                 {% for page in pages %}
-                    <li><a href="{{ page.url }}">{{ page.title }}</a></li>
+                    <li><a href="{% url 'goto' %}?page_id={{ page.id }}">{{ page.title }}</a></li>
                 {% endfor %}
             </ul>
         {% else %}
-            <strong>No pasges currently in category.</strong>
+            <strong>No pages currently in category.</strong>
         {% endif %}
         <a href="{% url 'add_page' category_name_slug %}">Add Page</a>
     {% else %}
