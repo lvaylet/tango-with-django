@@ -45,7 +45,7 @@ coverage.xml
 docs/_build/
 
 # SQLite
-*.db
+db.sqlite3
 
 # Jetbrains PyCharm
 .idea/
