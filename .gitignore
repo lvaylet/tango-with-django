@@ -10,10 +10,13 @@ __pycache__/
 *.so
 
 # Distribution / packaging
+.Python
+env/
 bin/
 build/
 develop-eggs/
 dist/
+downloads/
 eggs/
 lib/
 lib64/
@@ -29,6 +32,7 @@ pip-log.txt
 pip-delete-this-directory.txt
 
 # Unit test / coverage reports
+htmlcov/
 .tox/
 .coverage
 .cache
@@ -45,8 +49,8 @@ coverage.xml
 # Sphinx documentation
 docs/_build/
 
-# Jetbrains PyCharm
+# JetBrains PyCharm IDE settings
 .idea/
 
-# API keys
+# Private API keys
 rango/keys.py
