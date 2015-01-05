@@ -38,6 +38,8 @@
         {% else %}
             The specified category {{ category_name }} does not exist!
         {% endif %}
+        
+        <hr/>
 
         {% if user.is_authenticated %}
             <form class="form-inline" id="user_form" method="post" action="{% url 'category' category.slug %}">
