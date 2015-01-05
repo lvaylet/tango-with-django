@@ -10,7 +10,13 @@ class Category(models.Model):
     slug = models.SlugField(unique=True)
 
     def save(self, *args, **kwargs):
+        # Generate slug name for URL
         self.slug = slugify(self.name)
+        # Make sure views and likes are positive numbers
+        if self.views < 0:
+            self.views = 0
+        if self.likes < 0:
+            self.likes = 0
         super(Category, self).save(*args, **kwargs)
 
     def __str__(self):
